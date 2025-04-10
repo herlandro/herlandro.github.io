@@ -1,73 +1,128 @@
-# Welcome to your Lovable project
+# Personal Portfolio
 
-## Project info
+A modern and responsive personal portfolio website developed with pure HTML, CSS, and JavaScript. Inspired by the design of [design1](https://design1.io) and [design2](https://design2.io).
 
-**URL**: https://lovable.dev/projects/79837ea0-c3be-4d4b-a093-19b52af892d4
+## Features
 
-## How can I edit this code?
+- Modern and clean design
+- Fully responsive layout
+- Skill filtering by category
+- Social media API integration
+- Smooth animations and transitions
+- Contact form
+- Blog section
+- Project showcase
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/79837ea0-c3be-4d4b-a093-19b52af892d4) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+portfolio/
+├── index.html
+├── assets/
+│   └── images/
+│       ├── profile.jpg
+│       ├── project1.jpg
+│       ├── project2.jpg
+│       └── project3.jpg
+├── js/
+│   └── main.js
+├── styles/
+│   ├── variables.css
+│   ├── base.css
+│   ├── components.css
+│   └── animations.css
+├── package.json
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+## Content
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Hero Section
+- Profile photo
+- Name and title
+- Brief description
+- Call-to-action buttons
 
-**Use GitHub Codespaces**
+### Skills
+- Filterable skill cards
+- Icons and categories
+- Interactive hover effects
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Social Networks
+- GitHub statistics
+- LinkedIn profile
+- Stack Overflow activity
 
-## What technologies are used for this project?
+### Projects
+- Project cards with images
+- Technology tags
+- Links to live demos
 
-This project is built with:
+### Blog
+- Latest articles from different platforms
+- Article summaries
+- Publication dates
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Contact
+- Contact form
+- Social media links
+- Location information
 
-## How can I deploy this project?
+## Customization
 
-Simply open [Lovable](https://lovable.dev/projects/79837ea0-c3be-4d4b-a093-19b52af892d4) and click on Share -> Publish.
+### Skills
+Edit the `skills` array in `js/main.js`:
+```javascript
+const skills = [
+    { name: 'Skill Name', category: 'category', icon: 'icon-class' }
+];
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Projects
+Update the `projects` array in `js/main.js`:
+```javascript
+const projects = [
+    {
+        title: 'Project Title',
+        description: 'Project description',
+        image: 'path/to/image.jpg',
+        technologies: ['Tech1', 'Tech2'],
+        link: 'project-url'
+    }
+];
+```
 
-Yes it is!
+### Blog Posts
+Modify the `blogPosts` array in `js/main.js`:
+```javascript
+const blogPosts = [
+    {
+        platform: 'Platform Name',
+        title: 'Article Title',
+        excerpt: 'Article summary...',
+        date: 'YYYY-MM-DD',
+        link: 'article-url'
+    }
+];
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Images
+Replace the images in the `assets/images/` directory:
+- `profile.jpg`: Your profile photo
+- `project1.jpg`, `project2.jpg`, `project3.jpg`: Project screenshots
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Deployment
+
+This site is configured for deployment on GitHub Pages. Simply push your changes to the main branch and the site will be automatically deployed.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
