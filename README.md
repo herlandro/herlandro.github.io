@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-A modern and responsive personal portfolio website developed with pure HTML, CSS, and JavaScript. Inspired by the design of [design1](https://design1.io) and [design2](https://design2.io).
+A modern and responsive personal portfolio website developed with pure HTML, CSS, and JavaScript.
 
 ## Features
 
