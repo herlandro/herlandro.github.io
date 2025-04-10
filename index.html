@@ -1,112 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Herlandro - Portfolio</title>
-    <meta name="description" content="Portfolio pessoal de Herlandro" />
-    <meta name="author" content="Herlandro" />
-    <link rel="stylesheet" href="styles/main.css">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herlandro Hermogenes - Desenvolvedor & Escritor</title>
+    <meta name="description" content="Desenvolvedor de software, escritor técnico e entusiasta de tecnologia">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <meta property="og:title" content="Herlandro - Portfolio" />
-    <meta property="og:description" content="Portfolio pessoal de Herlandro" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@herlandro" />
-    <meta name="twitter:image" content="/og-image.png" />
-  </head>
-
-  <body>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
     <header class="header">
-      <nav class="nav-container">
-        <div class="logo">Herlandro</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="mobile-menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Herlandro Hermogenes</a>
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#social" class="nav-link">Redes</a>
+                    <a href="#projects" class="nav-link">Projetos</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
-      <section id="about" class="section">
+    <!-- Hero Section -->
+    <section id="about" class="section hero">
         <div class="container">
-          <h1>About Me</h1>
-          <div class="profile-content">
-            <div class="profile-image">
-              <img src="assets/profile.jpg" alt="Herlandro">
+            <div class="grid grid-cols-2">
+                <div class="hero-content">
+                    <h1 class="fade-in">Olá, eu sou <span class="highlight">Herlandro</span></h1>
+                    <p class="hero-text slide-up delay-100">Desenvolvedor de software apaixonado por criar soluções inovadoras e compartilhar conhecimento.</p>
+                    <div class="hero-buttons slide-up delay-200">
+                        <a href="#contact" class="btn btn-primary">Entre em Contato</a>
+                        <a href="#projects" class="btn btn-outline">Ver Projetos</a>
+                    </div>
+                </div>
+                <div class="hero-image slide-up delay-300">
+                    <img src="assets/images/profile.jpg" alt="Seu Nome" class="profile-image">
+                </div>
             </div>
-            <div class="profile-text">
-              <p>Welcome to my portfolio! I'm a passionate developer with experience in web development, mobile apps, and more.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills & Tecnologias</h2>
+            <div class="skills-filter">
+                <button class="btn btn-outline active" data-filter="all">Todas</button>
+                <button class="btn btn-outline" data-filter="frontend">Frontend</button>
+                <button class="btn btn-outline" data-filter="backend">Backend</button>
+                <button class="btn btn-outline" data-filter="mobile">Mobile</button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="container">
-          <h2>Skills</h2>
-          <div class="skills-grid">
-            <!-- Skills will be loaded dynamically -->
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" class="section">
-        <div class="container">
-          <h2>Portfolio</h2>
-          <div class="portfolio-grid">
-            <!-- Projects will be loaded dynamically -->
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <h2>Contact</h2>
-          <div class="contact-content">
-            <div class="social-links">
-              <a href="https://github.com/herlandro" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/herlandro" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://twitter.com/herlandro" target="_blank"><i class="fab fa-twitter"></i></a>
+            <div class="grid grid-cols-4 skills-grid">
+                <!-- Skills cards serão inseridos via JavaScript -->
             </div>
-            <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-          </div>
         </div>
-      </section>
-    </main>
+    </section>
 
+    <!-- Social Networks Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 class="section-title">Redes Sociais</h2>
+            <div class="grid grid-cols-3 social-grid">
+                <div class="card social-card">
+                    <div class="card-header">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="social-stats">
+                            <li>Repositórios: <span id="github-repos">0</span></li>
+                            <li>Seguidores: <span id="github-followers">0</span></li>
+                            <li>Stars: <span id="github-stars">0</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card social-card">
+                    <div class="card-header">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="social-stats">
+                            <li>Conexões: <span id="linkedin-connections">0</span></li>
+                            <li>Posts: <span id="linkedin-posts">0</span></li>
+                            <li>Visualizações: <span id="linkedin-views">0</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card social-card">
+                    <div class="card-header">
+                        <i class="fab fa-stack-overflow"></i>
+                        <h3>Stack Overflow</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="social-stats">
+                            <li>Reputação: <span id="stack-reputation">0</span></li>
+                            <li>Respostas: <span id="stack-answers">0</span></li>
+                            <li>Perguntas: <span id="stack-questions">0</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="grid grid-cols-3 projects-grid">
+                <!-- Project cards serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="grid grid-cols-2 blog-grid">
+                <!-- Blog cards serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="grid grid-cols-2">
+                <div class="contact-info">
+                    <h3>Vamos Conversar</h3>
+                    <p>Estou sempre aberto a novas oportunidades e colaborações.</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> seu.email@exemplo.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Sua Localização</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensagem</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <p>&copy; 2024 Herlandro. All rights reserved.</p>
-      </div>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+    <!-- Main JavaScript -->
+    <script src="js/main.js" defer></script>
+</body>
+</html> 

@@ -1,4 +1,4 @@
-/* Basic Reset */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ a:hover {
     color: var(--primary-dark);
 }
 
-/* Typography */
+/* Tipografia */
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-4);
 }
@@ -32,7 +32,7 @@ p {
     margin-bottom: var(--spacing-4);
 }
 
-/* Images */
+/* Imagens */
 img {
     max-width: 100%;
     height: auto;
@@ -46,32 +46,22 @@ img {
     padding: 0 var(--spacing-4);
 }
 
-/* Utilities */
+/* Utilitários */
 .text-center { text-align: center; }
 .hidden { display: none; }
 
-/* Sections */
+/* Seções */
 .section {
     padding: var(--spacing-8) 0;
 }
 
-.section-title {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-6);
-    text-align: center;
-}
-
-/* Basic Grid */
+/* Grid básico */
 .grid {
     display: grid;
     gap: var(--spacing-4);
 }
 
-.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-/* Basic Flexbox */
+/* Flexbox básico */
 .flex {
     display: flex;
 }
@@ -80,15 +70,9 @@ img {
     flex-direction: column;
 }
 
-/* Basic Responsiveness */
+/* Responsividade básica */
 @media (max-width: 768px) {
     .container {
         padding: 0 var(--spacing-2);
-    }
-    
-    .grid-cols-2,
-    .grid-cols-3,
-    .grid-cols-4 {
-        grid-template-columns: 1fr;
     }
 } 
