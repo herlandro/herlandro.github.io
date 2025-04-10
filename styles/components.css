@@ -70,6 +70,40 @@
 .profile-image {
     border-radius: 50%;
     box-shadow: var(--shadow-md);
+    width: 50%;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hero image container */
+.hero-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Grid layout for hero section */
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-image {
+        justify-content: center;
+        margin-top: var(--spacing-6);
+    }
+    
+    .profile-image {
+        width: 70%;
+    }
 }
 
 /* Buttons */
@@ -136,12 +170,89 @@
 
 .skill-card {
     text-align: center;
+    background-color: var(--background-secondary);
+    border-radius: 12px;
+    padding: var(--spacing-4);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .skill-card i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-2);
-    color: var(--primary-color);
+    color: inherit;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Skill card icon colors */
+.skill-card .fa-html5 {
+    color: #e34f26;
+}
+
+.skill-card .fa-css3-alt {
+    color: #264de4;
+}
+
+.skill-card .fa-js {
+    color: #f7df1e;
+}
+
+.skill-card .fa-react {
+    color: #61dafb;
+}
+
+.skill-card .fa-node-js {
+    color: #339933;
+}
+
+.skill-card .fa-python {
+    color: #3776ab;
+}
+
+.skill-card .fa-swift {
+    color: #fa7343;
+}
+
+.skill-card .fa-android {
+    color: #3ddc84;
+}
+
+.skill-card .fa-apple {
+    color: #000000;
+}
+
+.skill-card .fa-git-alt {
+    color: #f05032;
+}
+
+.skill-card .fa-docker {
+    color: #2496ed;
+}
+
+.skill-card .fa-aws {
+    color: #ff9900;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-4);
 }
 
 /* Social Cards */
@@ -199,6 +310,7 @@
     background-color: var(--background-secondary);
     padding: var(--spacing-6);
     border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
 }
 
 .form-group {
@@ -228,6 +340,7 @@
     background-color: var(--background-secondary);
     padding: var(--spacing-4) 0;
     text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {

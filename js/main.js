@@ -74,11 +74,9 @@ const blogPosts = [
 // Function to create skill cards
 function createSkillCard(skill) {
     return `
-        <div class="card skill-card" data-category="${skill.category}">
-            <div class="card-body">
-                <i class="${skill.icon}"></i>
-                <h3>${skill.name}</h3>
-            </div>
+        <div class="skill-card" data-category="${skill.category}">
+            <i class="${skill.icon}"></i>
+            <h3>${skill.name}</h3>
         </div>
     `;
 }
