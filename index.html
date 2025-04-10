@@ -6,6 +6,9 @@
     <title>Herlandro - Portfolio</title>
     <meta name="description" content="Portfolio pessoal de Herlandro" />
     <meta name="author" content="Herlandro" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <meta property="og:title" content="Herlandro - Portfolio" />
     <meta property="og:description" content="Portfolio pessoal de Herlandro" />
@@ -18,7 +21,92 @@
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">Herlandro</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="container">
+          <h1>About Me</h1>
+          <div class="profile-content">
+            <div class="profile-image">
+              <img src="assets/profile.jpg" alt="Herlandro">
+            </div>
+            <div class="profile-text">
+              <p>Welcome to my portfolio! I'm a passionate developer with experience in web development, mobile apps, and more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <!-- Skills will be loaded dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section">
+        <div class="container">
+          <h2>Portfolio</h2>
+          <div class="portfolio-grid">
+            <!-- Projects will be loaded dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-content">
+            <div class="social-links">
+              <a href="https://github.com/herlandro" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/herlandro" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://twitter.com/herlandro" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Herlandro. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

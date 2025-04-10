@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-4);
+}
+
+p {
+    margin-bottom: var(--spacing-4);
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+.hidden { display: none; }
+
+/* Seções */
+.section {
+    padding: var(--spacing-8) 0;
+}
+
+/* Grid básico */
+.grid {
+    display: grid;
+    gap: var(--spacing-4);
+}
+
+/* Flexbox básico */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-2);
+    }
+} 
