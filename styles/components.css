@@ -714,31 +714,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: var(--background-secondary);
-    border: 1px solid var(--border-color);
     border-radius: 50%;
-    padding: var(--spacing-4);
-    transition: all var(--transition);
-    flex-shrink: 0;
-    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+    opacity: 0.5;
 }
 
 .tech-icon:hover {
-    background-color: var(--border-color);
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
 }
 
-.tech-icon.active {
+.tech-icon.selected {
     background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: white;
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 }
 
-.tech-icon.active i {
-    color: white !important;
+.tech-icon.all-tech {
+    background-color: var(--background-secondary);
+    opacity: 1;
+}
+
+/* When any other tech is selected, make the "All" icon less prominent */
+.tech-icon:not(.all-tech).selected ~ .tech-icon.all-tech,
+.tech-icon:not(.all-tech).selected ~ * ~ .tech-icon.all-tech {
+    opacity: 0.5;
+}
+
+/* Override the above rule when "All" is selected */
+.tech-icon.all-tech.selected {
+    background-color: var(--primary-color);
+    opacity: 1 !important;
+}
+
+.tech-icon.all-tech i {
+    color: var(--primary-color);
+}
+
+.tech-icon.all-tech.selected i {
+    color: white;
+}
+
+.tech-icon.all-tech:hover {
+    opacity: 1;
 }
 
 .tech-icon i {

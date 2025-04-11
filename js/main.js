@@ -278,5 +278,64 @@ function initializeSkills() {
 // Call initializeSkills when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeSkills();
+    
+    // Handle "All" technology click
+    const allTechIcon = document.querySelector('.all-tech');
+    if (allTechIcon) {
+        allTechIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remove selected class from all tech icons
+            document.querySelectorAll('.tech-icon').forEach(icon => {
+                icon.classList.remove('selected');
+            });
+            
+            // Add selected class to "All" icon
+            allTechIcon.classList.add('selected');
+            
+            // Show all app cards
+            document.querySelectorAll('.app-card').forEach(card => {
+                card.style.display = 'flex';
+            });
+        });
+    }
+    
+    // Handle other technology clicks
+    document.querySelectorAll('.tech-icon:not(.all-tech)').forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            // Remove selected class from "All" icon
+            const allTechIcon = document.querySelector('.all-tech');
+            allTechIcon.classList.remove('selected');
+            
+            // Toggle selected class on clicked icon
+            icon.classList.toggle('selected');
+            
+            // Get all selected technologies
+            const selectedTechs = Array.from(document.querySelectorAll('.tech-icon.selected:not(.all-tech)'))
+                .map(tech => tech.querySelector('i').className.split(' ').pop());
+            
+            // Filter app cards based on selected technologies
+            document.querySelectorAll('.app-card').forEach(card => {
+                if (selectedTechs.length === 0) {
+                    // If no technologies selected, show all cards
+                    card.style.display = 'flex';
+                } else {
+                    // Get card's tech tags
+                    const cardTags = Array.from(card.querySelectorAll('.tech-tag'))
+                        .map(tag => tag.className.split(' ').pop());
+                    
+                    // Check if card has any of the selected technologies
+                    const hasSelectedTech = selectedTechs.some(tech => {
+                        // Convert tech class to match tag class (e.g., fa-react -> react)
+                        const techClass = tech.replace('fa-', '');
+                        return cardTags.includes(techClass);
+                    });
+                    
+                    card.style.display = hasSelectedTech ? 'flex' : 'none';
+                }
+            });
+        });
+    });
+    
     // ... rest of your initialization code ...
 }); 
