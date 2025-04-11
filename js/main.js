@@ -233,4 +233,50 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Initialize the site when the DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeSite); 
+document.addEventListener('DOMContentLoaded', initializeSite);
+
+function initializeSkills() {
+    const skillsContainer = document.getElementById('skills-grid');
+    const skillCards = document.querySelectorAll('.skill-card');
+    let selectedSkills = new Set();
+
+    skillCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const skillName = card.querySelector('h3').textContent.toLowerCase();
+            
+            // Toggle selection
+            if (selectedSkills.has(skillName)) {
+                selectedSkills.delete(skillName);
+                card.classList.remove('selected');
+            } else {
+                selectedSkills.add(skillName);
+                card.classList.add('selected');
+            }
+
+            // Filter projects based on selected skills
+            const projectCards = document.querySelectorAll('.app-card');
+            projectCards.forEach(projectCard => {
+                if (selectedSkills.size === 0) {
+                    // If no skills selected, show all projects
+                    projectCard.style.display = 'flex';
+                } else {
+                    // Get project's tech tags
+                    const projectTags = Array.from(projectCard.querySelectorAll('.tech-tag'))
+                        .map(tag => tag.textContent.toLowerCase());
+                    
+                    // Check if project has any of the selected skills
+                    const hasSelectedSkill = Array.from(selectedSkills)
+                        .some(skill => projectTags.includes(skill));
+                    
+                    projectCard.style.display = hasSelectedSkill ? 'flex' : 'none';
+                }
+            });
+        });
+    });
+}
+
+// Call initializeSkills when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSkills();
+    // ... rest of your initialization code ...
+}); 
