@@ -688,26 +688,24 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    cursor: grab;
-}
-
-.marquee-container:active {
-    cursor: grabbing;
 }
 
 .marquee {
     display: flex;
-    width: fit-content;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
 }
 
 .marquee-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-4);
     padding: var(--spacing-2);
+    width: 100%;
 }
 
 .tech-icon {
@@ -718,7 +716,7 @@
     height: 60px;
     background-color: var(--background-secondary);
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0;
     transition: all 0.3s ease;
     text-decoration: none;
     color: var(--text-color);
@@ -726,14 +724,12 @@
 }
 
 .tech-icon:hover {
-    transform: translateY(-5px);
     opacity: 0.8;
 }
 
 .tech-icon.selected {
     background-color: white;
     color: var(--text-color);
-    transform: translateY(-5px);
     opacity: 1;
 }
 
@@ -818,27 +814,6 @@
 
 .tech-icon .fa-apple {
     color: #000000;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .tech-icon {
-        width: 60px;
-        height: 60px;
-        padding: var(--spacing-3);
-    }
-    
-    .tech-icon i {
-        font-size: 1.5rem;
-    }
 }
 
 /* App Cards */
@@ -1006,5 +981,53 @@
     .tech-tag {
         font-size: 0.65rem;
         padding: 1px 6px;
+    }
+}
+
+/* Removendo a animação de marquee que não é mais necessária */
+/* @keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
+
+@media (max-width: 768px) {
+    .marquee {
+        padding: var(--spacing-2);
+    }
+    
+    .marquee-content {
+        gap: var(--spacing-2);
+    }
+    
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tech-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .marquee {
+        padding: var(--spacing-1);
+    }
+    
+    .marquee-content {
+        gap: var(--spacing-1);
+    }
+    
+    .tech-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .tech-icon i {
+        font-size: 1.2rem;
     }
 } 
