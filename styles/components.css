@@ -674,12 +674,20 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    cursor: grab;
+}
+
+.marquee-container:active {
+    cursor: grabbing;
 }
 
 .marquee {
     display: flex;
-    animation: marquee 30s linear infinite;
     width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .marquee-content {
@@ -765,7 +773,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(0);
     }
 }
 
