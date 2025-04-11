@@ -828,6 +828,92 @@
     color: #888888;
 }
 
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.tech-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Technology tag colors - matching the icon colors */
+.tech-tag.react {
+    background-color: rgba(97, 218, 251, 0.1);
+    color: #61DAFB;
+}
+
+.tech-tag.node {
+    background-color: rgba(51, 153, 51, 0.1);
+    color: #339933;
+}
+
+.tech-tag.js {
+    background-color: rgba(247, 223, 30, 0.1);
+    color: #F7DF1E;
+}
+
+.tech-tag.html {
+    background-color: rgba(227, 79, 38, 0.1);
+    color: #E34F26;
+}
+
+.tech-tag.css {
+    background-color: rgba(21, 114, 182, 0.1);
+    color: #1572B6;
+}
+
+.tech-tag.python {
+    background-color: rgba(55, 118, 171, 0.1);
+    color: #3776AB;
+}
+
+.tech-tag.swift {
+    background-color: rgba(250, 115, 67, 0.1);
+    color: #FA7343;
+}
+
+.tech-tag.git {
+    background-color: rgba(240, 80, 50, 0.1);
+    color: #F05032;
+}
+
+.tech-tag.docker {
+    background-color: rgba(36, 150, 237, 0.1);
+    color: #2496ED;
+}
+
+.tech-tag.aws {
+    background-color: rgba(255, 153, 0, 0.1);
+    color: #FF9900;
+}
+
+.tech-tag.android {
+    background-color: rgba(61, 220, 132, 0.1);
+    color: #3DDC84;
+}
+
+.tech-tag.ios {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+.tech-tag.firebase {
+    background-color: rgba(255, 153, 0, 0.1);
+    color: #FF9900;
+}
+
+.tech-tag.mongodb {
+    background-color: rgba(67, 153, 52, 0.1);
+    color: #439334;
+}
+
 @media (max-width: 768px) {
     .app-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -836,6 +922,24 @@
 
 @media (max-width: 480px) {
     .app-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .app-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .app-info h3 {
+        font-size: 0.9rem;
+    }
+    
+    .app-category {
+        font-size: 0.8rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.65rem;
+        padding: 1px 6px;
     }
 } 
